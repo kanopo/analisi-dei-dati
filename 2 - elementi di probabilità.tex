@@ -1,0 +1,95 @@
+
+
+\chapter{Elementi di probabilità}
+
+Ci sono due interpretazioni, \textbf{frequentista} o \textbf{soggettivista}, nel'interpretazione 
+frequentista si ha che la probabilità è una proprietà dell'esito stesso dell'esperimento
+e si ricava ripetendo l'esperimento.(scienza)
+
+Nel caso di interpretazione soggettivista la probabilità viene precisata in base alla fiduci dell'esito.(filosofia e finanza)
+
+\section{Spazio degli esiti ed eventi}
+
+\begin{itemize}
+    \item \textbf{Spazio degli esiti($S$ oppure $\Omega$)} $=$ insieme degli esiti possibili
+    \item \textbf{Eventi($E$)} $=$ insieme i cui elementi sono esiti possibili 
+    \item \textbf{Unione eventi} $A\cup B=$ OR logico
+    \item \textbf{Intersezione eventi} $A\cap B=$ AND logico, si indica molto spesso mediante una virgola
+    \item \textbf{$A\cap B = \emptyset$} significa che sono due insiemi disgiunti o mutualemnte esclusivi
+    \item \textbf{$A^B$} significa complementari
+    \item \textbf{$A \subset B$} significa che $A$ è un sottoinsieme di $B$
+\end{itemize}
+
+
+\section{Assiomi della probabilità}
+
+\begin{enumerate}
+    \item La probabilità di un evento $E$ è: $0 \leq P(E) \leq 1$
+    \item La probabilità dello spazio degli esiti $P(S)$ è $1$  
+    \item La probabilità che si verifichi almeno un eventi di un insieme di eventi mutualemnte esclusivi è uguale alla somma delle loro probabilità
+    $P(\displaystyle\cup_{i = 1}^n E_i) = \displaystyle\sum_{i = 1}^{n} P(E_i)$
+\end{enumerate}
+
+\section{Spazio esiti equiprobabili}
+
+Si capisce molto facilmete guardando la probabilità di lanciare un dato e le facce hanno tutte la stesa probabilità
+di uscire. 
+
+$S = \{1, 2, \dots, n\}$
+
+La probabilità $P = \displaystyle\frac{1}{n}$
+
+\subsection{Coefficiente binomiale}
+
+Voglio determinare il numero di diversi gruppi di $r$ oggetti che si possono formare scegliendoli da 
+un'insieme di $n$. 
+
+\begin{equation}
+    \binom{n}{k} = \displaystyle\frac{n!}{r!(n-r)!}
+\end{equation}
+
+
+\section{Probabilità condizionata}
+
+La probabilità condizionata di $E$ dato $F$ è:
+\begin{equation}
+    P(E|F) = \displaystyle\frac{P(E\cap F)}{P(F)} 
+\end{equation}
+
+
+\section{Fattorizzazione di un evento e formula di Bayes}
+
+
+\begin{equation}
+    E = (E \cap F) \cup (E \cap F^C)
+\end{equation}
+
+\begin{equation}
+    \begin{split}    
+    P(E) = P(E \cap F) + (E \cap F^C) \\ 
+        = P(E|F)P(F) + P(E|F^C)P(F^C) \\
+        = P(E|F)P(F) + P(E|F^C)[1 - P(F)]
+    \end{split}
+\end{equation}
+
+\begin{itemize}
+    \item $E$ intersezione $F$ sarebbe un and logico 
+    \item $E$ intersezione $F^C$ risulta nell'insieme $E$ togliendo le parti in comune con $F$
+\end{itemize}
+
+
+
+
+\section{Eventi indipendenti}
+
+Se due eventi $E$ ed $F$ sono indipendenti, allora
+\begin{equation}
+    P(E\cap F) = P(E)P(F) 
+\end{equation}
+
+Sono indipendenti e significa che la riuscita o meno di un evento non condiziona la riuscita dell'altro. 
+
+La formula generale \`{e}:
+\begin{equation}
+    P(\cap_{i = 1}^r E_{ai} = \prod_{i = 1}^{r} P(E_{ai})) 
+\end{equation}
