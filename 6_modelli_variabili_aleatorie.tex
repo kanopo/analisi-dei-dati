@@ -1,0 +1,63 @@
+\chapter{Modelli di variabili aleatorie}
+
+\section{Variabili aleatorie di Bernoulli}
+Una variabile aleatoria di Bernoulli è una variabile aleatoria discreta che assume valore 1 con probabilità $p$ e valore 0 con probabilità $1-p$, dove $0\leq p \leq 1$. Ad esempio, la variabile aleatoria che rappresenta il lancio di una moneta equilibrata è di tipo Bernoulli, in quanto assume valore 1 se il risultato del lancio è testa e 0 se è croce.
+
+\begin{equation}
+  P(X = 0) = 1 - p
+\end{equation}
+
+\begin{equation}
+  P(X = 1) = p
+\end{equation}
+\section{Variabili aleatorie binomiale}
+Una variabile aleatoria binomiale è una variabile aleatoria discreta che rappresenta il numero di successi in una sequenza di $n$ prove indipendenti, ciascuna con probabilità di successo $p$. La variabile aleatoria binomiale viene indicata con $X \sim B(n,p)$ e assume i valori $0, 1, 2, \ldots, n$. La sua funzione di probabilità è data da:
+
+$$P(X=k) = \binom{n}{k} p^k (1-p)^{n-k}$$
+
+dove $\binom{n}{k}$ è il coefficiente binomiale, che rappresenta il numero di modi diversi in cui è possibile ottenere $k$ successi in $n$ prove. In altre parole, la variabile aleatoria binomiale conta il numero di volte che si ottiene un certo evento in una serie di prove ripetute indipendenti.
+
+Il valore atteso di una variabile aleatoria binomiale è dato da:
+
+$$E[X] = np$$
+
+mentre la sua varianza è:
+
+$$Var(X) = np(1-p)$$
+
+
+\subsection{Calcolo esplicitp della distribuzione binomiale}
+Supponendo $X$ una binomiale di parametri $(n, p)$, la funzione di ripartizione è:
+\begin{equation}
+  P(X \leq i) = \sum_{k=0}^i \binom{n}{i} p^k(1-p)^{n-k}
+\end{equation}
+
+Per calcolare la funzione di massa:
+\begin{equation}
+  P(X = i) = \binom{n}{i} p^i(1-p)^{n-i}
+\end{equation}
+
+
+\section{Variabile aleatoria di Poisson}
+La variabile aleatoria di Poisson è una variabile aleatoria discreta che descrive il numero di eventi rari che si verificano in un intervallo di tempo o di spazio, dato il tasso di occorrenza di tali eventi. Ad esempio, il numero di chiamate che un centralino telefonico riceve in un minuto, il numero di incidenti stradali in un'ora, il numero di particelle radioattive che decadono in un secondo.
+
+La variabile aleatoria di Poisson è indicata con $X$ e si esprime attraverso un parametro $\lambda$ che rappresenta il tasso di occorrenza degli eventi. La sua funzione di probabilità è data dalla seguente formula:
+
+$$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$$
+
+Mentre la media e la varianza sono:
+
+$$E(X) = \lambda$$
+
+$$Var(X) = \lambda$$
+
+
+Una caratteristica interessante della Poissoniana è che può approssimare una binomiale con parametri $(n, p)$ quando
+$n$ è molto grande e $p$ molto piccolo, ponendo $\lambda = np$:
+\begin{equation}
+  P(X = i) \approx \frac{\lambda^i}{i!}e^{-\lambda}
+\end{equation}
+
+\subsection{Calcolo esplicito della distribuzione di Poisson}
+
+
