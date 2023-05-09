@@ -1,0 +1,183 @@
+\chapter{Variabili aleatorie e valore atteso}
+In teoria delle probabilità, una variabile aleatoria è una funzione che assegna un valore
+numerico a ciascun possibile esito di un esperimento casuale. In altre parole, 
+una variabile aleatoria è una quantità che può assumere diversi valori a seconda
+dell'esito dell'esperimento.
+
+Ad esempio, se si lancia un dado equilibrato, il numero che esce è una variabile
+aleatoria, che può assumere i valori da 1 a 6 con uguale probabilità.
+
+Il valore atteso di una variabile aleatoria è
+il valore medio che ci si aspetta di ottenere se si ripete l'esperimento
+un gran numero di volte. In altre parole, è una sorta di media ponderata
+dei possibili valori che la variabile aleatoria può assumere, 
+in cui i pesi sono le rispettive probabilità.
+
+Il valore atteso di una variabile aleatoria $X$
+si indica con $E(X)$ e si calcola come:
+
+\begin{equation}
+  E(X) = \sum x \times P(X = x)
+\end{equation}
+
+dove la somma è estesa a tutti i possibili valori $x$ che $X$ può assumere,
+e $P(X = x)$ è la probabilità che $X$ assuma il valore $x$.
+
+Ad esempio, se si considera la variabile aleatoria che indica il numero
+uscito lanciando un dado equilibrato, il valore atteso è:
+
+\begin{equation}
+  E(X) = 
+        \frac{1}{6} \cdot 1 + 
+        \frac{1}{6} \cdot 2 + 
+        \frac{1}{6} \cdot 3 +
+        \frac{1}{6} \cdot 4 +
+        \frac{1}{6} \cdot 5 +
+        \frac{1}{6} \cdot 6 +
+        = 3.5
+\end{equation}
+
+Questo significa che se si ripete il lancio del dado un gran numero di volte,
+ci si può aspettare che la media dei risultati si avvicini a 3.5.
+
+Il valore atteso è una misura importante della "centralità" di una variabile aleatoria,
+e consente di fare previsioni sul comportamento medio della variabile stessa. Ad esempio,
+se si conosce il valore atteso di una variabile aleatoria $X$, è possibile stimare la 
+probabilità che $X$ assuma valori superiori o inferiori a una determinata soglia.
+
+
+
+\section{Funzione di ripartizione}
+
+La funzione di ripartizione di una variabile aleatoria X si indica con $F(X)$ e si definisce come:
+
+$$F(X) = P(X \leq x)$$
+
+dove $x$ è un valore qualsiasi, e $P(X \leq x)$ rappresenta la probabilità che la variabile aleatoria $X$ assuma un valore minore o uguale a $x$.
+
+La funzione di ripartizione ha le seguenti proprietà:
+
+1. $F(X)$ è una funzione non-decrescente, ovvero per ogni valore di $x_1$ e $x_2$ tali che $x_1 \leq x_2$, si ha $F(x_1) \leq F(x_2)$.
+
+2. $F(X)$ è limitata superiormente da 1 e inferiormente da 0, ovvero $F(-\infty) = 0$ e $F(+\infty) = 1$.
+
+3. La probabilità che la variabile aleatoria $X$ assuma un valore compreso tra due valori $x_1$ e $x_2$ si può calcolare come la differenza tra le rispettive probabilità cumulative, ovvero:
+
+$$P(x_1 < X \leq x_2) = F(x_2) - F(x_1)$$
+
+La funzione di ripartizione è una delle proprietà fondamentali di una variabile aleatoria, in quanto consente di calcolare molte altre quantità importanti, come la media e la varianza della variabile stessa. Inoltre, permette di effettuare test di ipotesi e di costruire intervalli di confidenza sulla base dei dati osservati.
+
+\section{Variabili aleatorie discrete e continue}
+Una variabile aleatoria si dice discreta se può assumere solo un numero finito o numerabile di valori distinti. Ad esempio, il numero di facce che esce dal lancio di un dado è una variabile aleatoria discreta, in quanto può assumere solo i valori 1, 2, 3, 4, 5, o 6.
+
+Una variabile aleatoria si dice continua se può assumere un numero infinito di valori in un intervallo. Ad esempio, la lunghezza di un filo può essere una variabile aleatoria continua, in quanto può assumere qualunque valore in un intervallo continuo di valori.
+
+\begin{itemize}
+  \item Per le variabili aleatorie discrete, la funzione di probabilità assegna una probabilità a ciascun valore possibile che può assumere la variabile. Questa funzione è spesso rappresentata da un grafico a barre, in cui l'altezza di ogni barra corrisponde alla probabilità associata a un valore particolare.
+
+  \item Per le variabili aleatorie continue, la funzione di probabilità assume una forma di densità di probabilità, che descrive la probabilità di trovare la variabile in un intervallo di valori. Questa funzione può essere rappresentata da un grafico a linea, in cui l'area sottostante alla curva corrisponde alla probabilità di trovare la variabile in un intervallo specifico.
+\end{itemize}
+
+\section{Coppie e vettori di variabili aleatorie}
+
+La funzione di ripartizione congiunta di $X$ e $Y$ è:
+\begin{equation}
+  F(x, y) := P(X \leq x, Y \leq y)
+\end{equation}
+Dove la \textbf{virgola} denota l'\textbf{intersezione} degli eventi.
+
+\subsection{Distribuzione congiunta - variabili aleatorie discrete}
+\begin{equation}
+  p(x_i, y_i) := P(X = x_i, Y = y_j)
+\end{equation}
+È la \textbf{funzione di massa di probabilità congiunta}.
+
+Le funzioni di massa individuali si possono ottenere:
+\begin{equation}
+  p_X(x_i) := P(X =x_i) = \sum_j p(x_i, y_j)
+\end{equation}
+
+\subsection{Distribuzione congiunta - variabili aleatorie continue}
+\begin{equation}
+  P(X \in A, Y \in B) = \int_B\int_A f(x, y) dxdy
+\end{equation}
+È la \textbf{densità congiunta}.
+
+Per ricavare le individuali:
+\begin{equation}
+  f_X(x) = \int_{-\infty}^{+\infty} f(x, y)dy
+\end{equation}
+
+\begin{equation}
+  f_Y(y) = \int_{-\infty}^{+\infty} f(x, y)dx
+\end{equation}
+
+\subsection{Variabili aleatorie indipendenti}
+
+Due variabili aleatorie sono indipendenti se tutti gli eventi relativi alla prima sono indipendenti dalal seconda e viceversa.
+
+\begin{equation}
+  P(X \in A, Y \in B) = P(X \in A)P(Y \in B)
+\end{equation}
+
+\subsection{Distribuzioni condizionali}
+Le distribuzioni condizionali di variabili aleatorie si riferiscono alla distribuzione di una variabile aleatoria data un'informazione o un vincolo su un'altra variabile aleatoria. In altre parole, quando abbiamo informazioni su una variabile aleatoria, possiamo utilizzare tali informazioni per stimare la distribuzione di un'altra variabile aleatoria.
+
+La distribuzione condizionale di X data Y = y è definita come:
+
+$$P(X = x | Y = y) = \frac{P(X = x, Y = y)}{P(Y = y)}$$
+
+\section{Valore atteso}
+Il valore atteso (o media) di una variabile aleatoria è una misura della tendenza centrale dei suoi possibili valori. In altre parole, il valore atteso rappresenta il valore medio che ci si aspetta di ottenere da una variabile aleatoria se viene ripetutamente campionata.
+
+Il valore atteso di una variabile aleatoria discreta X è definito come:
+\begin{equation}
+  E[X] = \sum_i x_i P(X = x_i)
+\end{equation}
+
+per una variabile aleatoria continua, il valore atteso è definito come:
+\begin{equation}
+  E[X] = \int_{-\infty}^{+\infty} xf(x)dx
+\end{equation}
+
+
+\section{Proprietà del valore atteso}
+
+\begin{itemize}
+\item Linearità: il valore atteso di una somma di variabili aleatorie è la somma dei loro valori attesi. In altre parole, se $X$ e $Y$ sono variabili aleatorie e $a$ e $b$ sono costanti, allora:
+
+$$E[aX + bY] = aE[X] + bE[Y]$$
+
+\item Additività: il valore atteso di una funzione di una variabile aleatoria è la somma dei valori attesi della funzione per ciascun valore della variabile. In altre parole, se $g(X)$ è una funzione di $X$, allora:
+
+$$E[g(X)] = \sum_{x} g(x) P(X=x)$$
+
+\item Monotonia: se $X$ e $Y$ sono variabili aleatorie tali che $X \leq Y$, allora:
+
+$$E[X] \leq E[Y]$$
+
+\item Indipendenza: se $X$ e $Y$ sono variabili aleatorie indipendenti, allora:
+
+$$E[XY] = E[X]E[Y]$$
+
+\item Variance: la varianza di una variabile aleatoria $X$ è definita come:
+
+$$Var[X] = E[(X - E[X])^2]$$
+
+e può essere espressa come:
+
+$$Var[X] = E[X^2] - (E[X])^2$$
+\end{itemize}
+
+\section{Covarianza e varianza della somma di variabili aleatorie}
+La covarianza tra due variabili aleatorie $X$ e $Y$ è definita come:
+
+$$Cov[X,Y] = E[(X - E[X])(Y - E[Y])]$$
+
+La varianza della somma di due variabili aleatorie è data da:
+
+$$Var[X + Y] = Var[X] + Var[Y] + 2Cov[X,Y]$$
+
+Se le variabili sono indipendenti, la covarianza è zero e l'equazione si riduce a:
+
+$$Var[X + Y] = Var[X] + Var[Y]$$
