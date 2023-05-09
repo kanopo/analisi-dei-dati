@@ -1,0 +1,33 @@
+\chapter{Funzione generatrice dei momenti}
+
+La funzione generatrice dei momenti è utile perché fornisce una rappresentazione compatta delle informazioni sui momenti di una variabile aleatoria. Inoltre, se due variabili aleatorie hanno la stessa funzione generatrice dei momenti, allora hanno gli stessi momenti e quindi la stessa distribuzione di probabilità.
+
+Infine, la funzione generatrice dei momenti è particolarmente utile per variabili aleatorie discrete, poiché consente di calcolare facilmente le probabilità e le statistiche associate a queste variabili.
+
+Nello specifico quando si tratta di \textbf{variabili aleatorie discrete}:
+\begin{equation}
+  \Phi(t) = E[e^{tX}] = \sum_x e^{tx}p(x)
+\end{equation}
+
+Nello specifico quando si tratta di \textbf{variabili aleatorie continua}:
+\begin{equation}
+  \Phi(t) = E[e^{tX}] = \int_{-\infty}^{+\infty} e^{tx} f(x)dx
+\end{equation}
+
+Derivando una volta il moto nell'origine si ottiene:
+\begin{equation}
+  \Phi'(0) = E[X]
+\end{equation}
+
+In generale si ha che:
+\begin{equation}
+  \Phi^n(0) = E[X^n]
+\end{equation}
+
+Se $X$ e $Y$ sono variabili aleatorie \textbf{indipendenti} con funzioni generatrici 
+$\Phi_X$ e $\Phi_Y$, e se $\Phi_{X+Y}$ è la funzione generatrice dei momenti di $X+Y$, allora:
+\begin{equation}
+  \Phi_{X+Y}(t) = \Phi_X(t)\Phi_Y(t)
+\end{equation}
+
+

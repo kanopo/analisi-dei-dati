@@ -1,0 +1,77 @@
+\chapter{Elementi di probabilità}
+\section{Spazio degli esiti ed eventi}
+
+Lo spazio degli esiti è l'insieme di tutti gli esiti possibili di un esperimento.
+
+\section{Spazio degli esiti equiprobabili}
+Lo spazio degli esiti equiprobabili è un concetto fondamentale della probabilità e si riferisce all'insieme di tutti gli esiti possibili di un esperimento casuale in cui ogni esito ha la stessa probabilità di occorrere. In altre parole, è uno spazio campionario in cui ogni esito ha la stessa probabilità di accadere.
+
+
+La probabilità che accada 1 evento dello spazio degli esiti equiprobabili è:
+\begin{equation}
+  P(E) = \frac{1}{N}
+\end{equation}
+Dove $N$ è il numero di esiti possibili.
+\section{Assiomi della probabilità}
+
+\begin{itemize}
+  \item la probabilità di un evento è compresa tra 0 e 1
+  \item la probabilità dello spazio degli esiti è 1
+  \item unendo due eventi la loro probabilità si somma
+\end{itemize}
+
+
+\section{Coefficiente binomiale}
+Il coefficiente binomiale è il numero di sottoinsiemi di k elementi che si possono formare a partire da un insieme di n elementi.
+
+\begin{equation}
+  \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation}
+
+\section{Probabilità condizionata}
+La probabilità condizionata è una misura di probabilità che tiene conto di una certa informazione o condizione nota. In altre parole, la probabilità di un evento A, dato che un evento B si è verificato, viene calcolata in base alla conoscenza del verificarsi di B.
+
+\begin{equation}
+  P(A|B) = \frac{P(A \cap B)}{P(B)}
+\end{equation}
+
+\section{Fattorizzazione di un evento e formula di Bayes}
+
+La fattorizzazione di un evento è un metodo che consente di scrivere la probabilità di un evento composto come prodotto delle probabilità di eventi più semplici. In altre parole, si tratta di scomporre un evento complesso in eventi più elementari, al fine di semplificare il calcolo della probabilità complessiva.
+
+La formula di Bayes, invece, è un teorema della teoria della probabilità che permette di calcolare la probabilità condizionata di un evento A, data la conoscenza di un evento B. In particolare, la formula di Bayes afferma che:
+
+\begin{equation}
+  P(A|B) = \frac{P(B|A) \cdot P(A) }{ P(B)}
+\end{equation}
+
+dove $P(A|B)$ rappresenta la probabilità di $A$ dato $B$,
+$P(B|A)$ rappresenta la probabilità di $B$ dato $A$,
+$P(A)$ rappresenta la probabilità di $A$,
+e $P(B)$ rappresenta la probabilità di $B$.
+
+
+\section{Eventi indipendenti}
+
+Due eventi $A$ e $B$ si dicono \textbf{indipendenti} se la probabilità di
+$A$ non viene influenzata dalla conoscenza dell'avvenimento $B$ e viceversa,
+ovvero se:
+\begin{equation}
+  P(A|B) = P(A)
+\end{equation}
+
+\begin{equation}
+  P(B|A) = P(B)
+\end{equation}
+In altre parole, la conoscenza di uno degli eventi non fornisce alcuna informazione
+utile per determinare la probabilità dell'altro evento.
+Ad esempio, se si lancia una moneta equilibrata due volte,
+il risultato del primo lancio non influisce sulla probabilità di ottenere testa o croce
+al secondo lancio.
+
+Se due eventi sono indipendenti, allora la probabilità dell'evento composto A e B è data dal prodotto delle probabilità di A e B:
+
+\begin{equation}
+  P(A \cap B) = P(A) \cdot P(B)
+\end{equation}
+
