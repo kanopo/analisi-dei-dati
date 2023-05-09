@@ -68,6 +68,20 @@ Questa disuguaglianza implica che, per qualsiasi distribuzione di probabilità, 
 La disuguaglianza di Chebyshev è utile per stimare la probabilità di osservare un valore estremo in un insieme di dati, senza conoscere la loro distribuzione. Ad esempio, se si vuole stimare la percentuale di studenti di una scuola che hanno un QI inferiore a $130$, sapendo solo la media e la deviazione standard del QI degli studenti, la disuguaglianza di Chebyshev può essere utilizzata per fornire una stima superiore sulla percentuale di studenti che hanno un QI inferiore a $130$.
 
 \section{Insieme di dati bivariati}
+In statistica, un insieme di dati bivariati è un insieme di dati che contiene informazioni su due variabili per ogni osservazione nel campione. In altre parole, ogni osservazione nel campione è rappresentata da una coppia ordinata di numeri, uno per ogni variabile. Ad esempio, un insieme di dati bivariati potrebbe contenere informazioni sul reddito e sull'età di un gruppo di persone.
+
+Un insieme di dati bivariati può essere rappresentato graficamente utilizzando un grafico di dispersione, dove i valori delle due variabili sono rappresentati sui due assi cartesiani. Ciò consente di visualizzare la relazione tra le due variabili e identificare eventuali pattern o tendenze.
 \section{Coefficiente di correlazione campionaria}
+
+Il coefficiente di correlazione campionaria è una misura di quanto due variabili aleatorie siano linearmente correlate tra loro in un campione di dati. Il coefficiente di correlazione può assumere valori compresi tra -1 e 1, dove un valore di 1 indica una correlazione positiva perfetta, un valore di -1 indica una correlazione negativa perfetta, e un valore di 0 indica assenza di correlazione.
+
+Il coefficiente di correlazione campionaria si calcola come il rapporto tra la covarianza campionaria delle due variabili e il prodotto delle deviazioni standard campionarie delle due variabili. In formule:
+
+$$r = \frac{\sum_{i=1}^n (x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}}$$
+
+dove $n$ è la dimensione del campione, $x_i$ e $y_i$ sono i valori osservati delle due variabili nel campione, $\bar{x}$ e $\bar{y}$ sono le medie campionarie delle due variabili, e $\sqrt{\sum_{i=1}^n (x_i - \bar{x})^2}$ e $\sqrt{\sum_{i=1}^n (y_i - \bar{y})^2}$ sono le deviazioni standard campionarie delle due variabili.
+
+Un valore di $r$ vicino a 1 indica una forte correlazione positiva tra le due variabili, mentre un valore di $r$ vicino a -1 indica una forte correlazione negativa tra le due variabili. Un valore di $r$ vicino a 0 indica che le due variabili non sono correlate linearmente.
+
 
 
