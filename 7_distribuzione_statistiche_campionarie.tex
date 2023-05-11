@@ -1,0 +1,87 @@
+\chapter{La distribuzione delle statistiche campionarie}
+La distribuzione delle statistiche campionarie si riferisce alla distribuzione di probabilità di una qualsiasi quantità calcolata da un campione casuale, come la media campionaria, la varianza campionaria o la proporzione campionaria. Questa distribuzione è importante perché ci consente di fare inferenze sulla popolazione a partire dai dati del campione.
+
+In generale, la distribuzione di una statistica campionaria dipende dalla distribuzione della variabile casuale sottostante nella popolazione, dalla dimensione del campione e dal tipo di statistica. Ad esempio, se la variabile casuale sottostante è distribuita normalmente, allora la media campionaria segue anche una distribuzione normale, indipendentemente dalla dimensione del campione, mentre la somma campionaria segue una distribuzione normale solo se il campione è grande abbastanza da soddisfare le condizioni del teorema del limite centrale.
+
+Inoltre, la distribuzione delle statistiche campionarie può essere utilizzata per costruire intervalli di confidenza per i parametri della popolazione e per testare le ipotesi sulla popolazione. Ad esempio, se vogliamo testare se la media della popolazione è uguale a un valore specifico, possiamo calcolare la statistica t come rapporto tra la differenza tra la media campionaria e il valore specificato e l'errore standard della media campionaria, e utilizzare la distribuzione t di Student per calcolare la probabilità di osservare un valore della statistica t almeno estremo come quello che abbiamo osservato.
+
+\section{La media campionaria}
+La media campionaria è una statistica campionaria che viene utilizzata per stimare il valore medio della popolazione da cui è stata estratta la campione. Essa rappresenta la media aritmetica dei valori osservati del campione e viene calcolata attraverso la seguente formula:
+
+$$\bar{X}=\frac{1}{n}\sum_{i=1}^n X_i$$
+
+dove $\bar{X}$ rappresenta la media campionaria, $n$ rappresenta la dimensione del campione e $X_i$ rappresenta il valore della i-esima osservazione nel campione.
+
+La media campionaria è uno stimatore non distorto del valore medio della popolazione, il che significa che, in media, la media campionaria si avvicina al valore medio della popolazione. Inoltre, la distribuzione della media campionaria segue la distribuzione normale (o gaussiana) se la dimensione del campione è sufficientemente grande, grazie al teorema del limite centrale. Questo permette di utilizzare la media campionaria per effettuare inferenze sulla popolazione, come ad esempio stimare un intervallo di confidenza per il valore medio della popolazione o testare un'ipotesi riguardante il valore medio della popolazione.
+
+Il valore atteso della media campionaria corrisponde al valore medio della popolazione, ovvero:
+
+$$E(\bar{X}) = \mu$$
+
+dove $\mu$ rappresenta il valore medio della popolazione.
+
+La varianza della media campionaria dipende dalla varianza della popolazione e dalla dimensione del campione, ed è data dalla seguente formula:
+
+$$Var(\bar{X}) = \frac{\sigma^2}{n}$$
+
+dove $\sigma^2$ rappresenta la varianza della popolazione e $n$ rappresenta la dimensione del campione.
+
+Questa formula indica che la varianza della media campionaria diminuisce all'aumentare della dimensione del campione. In altre parole, aumentare la dimensione del campione riduce la variabilità della media campionaria e la rende quindi più affidabile come stima del valore medio della popolazione.
+
+\section{Il teorema del limite centrale}
+Il teorema del limite centrale afferma che, se consideriamo una sequenza di variabili aleatorie indipendenti e identicamente distribuite con media $\mu$ e varianza $\sigma^2$, allora la somma di queste variabili aleatorie si avvicina sempre di più alla distribuzione normale all'aumentare della dimensione del campione.
+
+In particolare, il teorema afferma che la media campionaria $\bar{X}$ di un grande numero di osservazioni estratte da una popolazione con media $\mu$ e varianza $\sigma^2$ si avvicina sempre di più alla distribuzione normale standard ($\mu=0$, $\sigma=1$) all'aumentare della dimensione del campione.
+
+Questo significa che, anche se la distribuzione della popolazione non è normale, la distribuzione della media campionaria diventa sempre più simile a una distribuzione normale all'aumentare della dimensione del campione. In altre parole, la distribuzione della media campionaria diventa sempre più simmetrica e approssimativamente normale, indipendentemente dalla forma della distribuzione della popolazione.
+
+Questo teorema ha importanti implicazioni pratiche in ambito statistico, perché consente di utilizzare la distribuzione normale per fare inferenze sulla media della popolazione anche quando la distribuzione della popolazione non è nota o non è normale, a patto che il campione sia abbastanza grande.
+
+\section{La varianza campionaria}
+La varianza campionaria è una stima della varianza della popolazione sulla base di un campione. La formula per la varianza campionaria è data da:
+
+$$ s^2 = \frac{\sum_{i=1}^n (x_i - \bar{x})^2}{n-1} $$
+
+dove $n$ è la dimensione del campione, $x_i$ è il valore della i-esima osservazione nel campione, e $\bar{x}$ è la media campionaria, definita come:
+
+$$ \bar{x} = \frac{\sum_{i=1}^n x_i}{n} $$
+
+La varianza campionaria è una stima non distorta della varianza della popolazione, nel senso che il valore atteso della varianza campionaria è uguale alla varianza della popolazione. Tuttavia, la varianza campionaria tende a sottostimare la varianza della popolazione, in quanto è basata su un campione e non sull'intera popolazione. 
+
+Inoltre, la varianza campionaria è un'importante misura di dispersione dei dati all'interno del campione. Più è grande la varianza campionaria, maggiore è la dispersione dei dati all'interno del campione.
+
+\section{Le distribuzioni delle statistiche di popolazioni normali}
+La distribuzione delle statistiche delle popolazioni normali è anch'essa una distribuzione normale. Ci sono due importanti statistiche delle popolazioni normali, ovvero la media campionaria e la varianza campionaria.
+
+La media campionaria di un campione di dimensione $n$ da una popolazione normale con media $\mu$ e varianza $\sigma^2$ è data da:
+
+$$\bar{X} = \frac{1}{n} \sum_{i=1}^{n} X_i$$
+
+dove $X_i$ sono i valori del campione.
+
+La media campionaria segue una distribuzione normale con media $\mu$ e varianza $\frac{\sigma^2}{n}$, ovvero:
+
+$$\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$$
+
+La varianza campionaria $S^2$ è un'altra importante statistica delle popolazioni normali. La varianza campionaria è definita come:
+
+$$S^2 = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2$$
+
+dove $X_i$ sono i valori del campione e $\bar{X}$ è la media campionaria.
+
+La varianza campionaria segue una distribuzione chi-quadrato con $n-1$ gradi di libertà, ovvero:
+
+$$\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}$$
+
+dove $\sigma^2$ è la varianza della popolazione.
+
+\section{Campionamento da insiemi finiti}
+Il campionamento da insiemi finiti è una tecnica utilizzata in statistica per selezionare un sottoinsieme casuale di elementi da una popolazione finita. Questo processo di campionamento viene utilizzato per studiare le proprietà della popolazione sulla base delle informazioni raccolte dal campione selezionato.
+
+In pratica, si sceglie un campione casuale di dimensione n dalla popolazione finita di N elementi in modo tale che ogni elemento della popolazione abbia la stessa probabilità di essere selezionato. Si possono utilizzare diversi metodi per selezionare il campione, ad esempio il campionamento casuale semplice o il campionamento sistematico.
+
+Il campionamento da insiemi finiti permette di stimare la media, la varianza, la proporzione e altre proprietà della popolazione sulla base delle statistiche calcolate sul campione selezionato. In particolare, la media campionaria, la varianza campionaria e la proporzione campionaria sono stime utilizzate per stimare rispettivamente la media, la varianza e la proporzione della popolazione.
+
+L'errore standard della media campionaria è definito come la deviazione standard della distribuzione campionaria della media e rappresenta l'incertezza associata alla stima della media della popolazione sulla base del campione selezionato. L'errore standard della media campionaria diminuisce all'aumentare della dimensione del campione selezionato.
+
+In sintesi, il campionamento da insiemi finiti è un metodo comune per studiare le proprietà delle popolazioni finite e per stimare le statistiche della popolazione sulla base del campione selezionato.
