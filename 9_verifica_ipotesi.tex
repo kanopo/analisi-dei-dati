@@ -1,0 +1,170 @@
+\chapter{Verifica delle ipotesi}
+La verifica delle ipotesi (o test di ipotesi) è un processo statistico che consiste nel valutare se i dati osservati sono compatibili con una determinata ipotesi sulla popolazione di riferimento. 
+
+Il processo di verifica delle ipotesi comporta l'individuazione di una statistica di prova (test statistic) che viene calcolata dai dati del campione. Questa statistica di prova viene confrontata con una distribuzione di probabilità nota, generalmente derivata dalla teoria statistica e comunemente chiamata distribuzione di riferimento o distribuzione campionaria sotto l'ipotesi nulla. L'ipotesi nulla è l'ipotesi che vogliamo testare, mentre l'ipotesi alternativa è l'ipotesi che vogliamo accettare se l'ipotesi nulla viene rifiutata.
+
+In base al confronto tra la statistica di prova e la distribuzione di riferimento, si calcola il valore p (p-value) che rappresenta la probabilità di ottenere una statistica di prova uguale o più estrema di quella osservata, sotto l'ipotesi nulla. Se il valore p è inferiore a una soglia di significatività prestabilita (tipicamente 0.05 o 0.01), allora si rifiuta l'ipotesi nulla e si accetta l'ipotesi alternativa. Al contrario, se il valore p è maggiore della soglia di significatività, si accetta l'ipotesi nulla.
+
+Va notato che il valore p non rappresenta la probabilità che l'ipotesi nulla sia vera o falsa, ma rappresenta solo la probabilità di ottenere un'osservazione almeno altrettanto estrema di quella osservata, supponendo che l'ipotesi nulla sia vera. In altre parole, il valore p ci indica quanto è "strana" o "rara" l'osservazione rispetto all'ipotesi nulla.
+
+La verifica delle ipotesi può essere un'operazione complessa e va effettuata con attenzione, evitando di trarre conclusioni affrettate o erronee. È importante specificare chiaramente l'ipotesi nulla e l'ipotesi alternativa, scegliere una statistica di prova appropriata e una distribuzione di riferimento adeguata, e definire una soglia di significatività congrua con il contesto e con il rischio di commettere errori di tipo I (rifiutare erroneamente l'ipotesi nulla) e di tipo II (accettare erroneamente l'ipotesi nulla).
+
+\section{Livelli di significatività}
+I livelli di significatività sono un parametro importante nella verifica delle ipotesi. In particolare, rappresentano la probabilità massima di commettere un errore di tipo I (ovvero respingere l'ipotesi nulla quando in realtà è vera) durante il processo di verifica dell'ipotesi.
+
+Solitamente, si sceglie un livello di significatività $\alpha$ (spesso 0.05 o 0.01) prima di eseguire il test di ipotesi. Questo significa che, se il valore p (probabilità di ottenere il risultato osservato o uno più estremo assumendo che l'ipotesi nulla sia vera) è inferiore a $\alpha$, allora l'ipotesi nulla viene respinta. In altre parole, se il valore p è molto basso (inferiore al livello di significatività scelto), allora è improbabile che i dati siano stati generati dall'ipotesi nulla e si conclude che questa è falsa.
+
+Tuttavia, è importante notare che la scelta del livello di significatività è soggettiva e può influenzare la decisione finale. Inoltre, respingere l'ipotesi nulla non significa necessariamente che l'ipotesi alternativa sia vera, ma solo che ci sono evidenze statistiche sufficienti per sospettare che l'ipotesi nulla non sia vera.
+
+
+\subsection{Tipologie di errori}
+Gli errori che si possono commettere durante la verifica di un'ipotesi sono di due tipi:
+
+\begin{itemize}
+    \item Errore di tipo I: si rifiuta un'ipotesi vera (falso positivo). Il livello di significatività $\alpha$ corrisponde alla probabilità di commettere un errore di tipo I.
+    \item Errore di tipo II: si accetta un'ipotesi falsa (falso negativo). La potenza del test $(1-\beta)$ corrisponde alla probabilità di non commettere un errore di tipo II.
+\end{itemize}
+
+Si noti che $\alpha$ e $\beta$ sono in genere valori fissati a priori, mentre la potenza del test dipende dal valore dell'effetto da rilevare e dal campione utilizzato per la verifica dell'ipotesi.
+
+\section{La verifica delle ipotesi sulla media di una popolazione normale}
+\subsection{Varianza nota}
+
+Supponiamo di avere un campione casuale di dimensione $n$ estratto da una popolazione normale con media $\mu$ e varianza $\sigma^2$, nota. Vogliamo testare l'ipotesi che la media della popolazione sia uguale a un certo valore prefissato $ \mu_0 $, ovvero:
+
+$H_0: \mu = \mu_0$ 
+
+$H_1: \mu \neq \mu_0$ 
+
+Calcoliamo la statistica del test:
+
+$$z = \frac{\overline{X} - \mu_0}{\sigma / \sqrt{n}}$$
+
+dove $\overline{X}$ è la media campionaria del campione estratto. La statistica $z$ segue una distribuzione normale standard.
+
+Calcoliamo il valore p del test, ovvero la probabilità di ottenere una statistica del test almeno tanto estrema quanto quella osservata, sotto l'ipotesi nulla $H_0$:
+
+$$p = 2(1 - \Phi(|z|))$$
+
+dove $\Phi$ è la funzione di distribuzione cumulativa standard della distribuzione normale.
+
+Confrontiamo il valore p con il livello di significatività $\alpha$ scelto. Se il valore p è inferiore al livello di significatività scelto, ovvero se $p < \alpha$, allora rigettiamo l'ipotesi nulla $H_0$ e accettiamo l'ipotesi alternativa $H_1$. Altrimenti, non rigettiamo l'ipotesi nulla $H_0$.
+
+Notare che se il livello di significatività scelto è del $5\%$, allora rigettiamo $H_0$ se il valore p è inferiore a 0.05. 
+
+Inoltre, se il valore di $z$ è positivo, allora la media campionaria $\overline{X}$ è maggiore di $\mu_0$, mentre se è negativo, allora $\overline{X}$ è minore di $\mu_0$. Se $|z|$ è grande, allora il valore di $\overline{X}$ è molto lontano da $\mu_0$, il che indica che l'ipotesi nulla è improbabile.
+
+È importante notare che il test di ipotesi z richiede la conoscenza della varianza della popolazione, che spesso non è nota e deve essere stimata dalla varianza campionaria $s^2$. In tal caso, si utilizza il test di ipotesi t invece di quello di ipotesi z.
+
+\subsection{I test unilaterali}
+I test unilaterali sono una tipologia di test statistici utilizzati per verificare un'ipotesi riguardo alla direzione di un effetto o di un cambiamento in una variabile. A differenza dei test bilaterali, che verificano se un effetto è presente in entrambe le direzioni, i test unilaterali si concentrano solo su una delle due direzioni. 
+
+Ad esempio, supponiamo di avere un'ipotesi che afferma che un nuovo farmaco aumenta la pressione sanguigna. Se volessimo utilizzare un test bilaterale, dovremmo verificare se il nuovo farmaco aumenta o diminuisce la pressione sanguigna. Invece, se volessimo utilizzare un test unilaterale, dovremmo verificare solo se il nuovo farmaco aumenta la pressione sanguigna.
+
+I test unilaterali possono essere di due tipi: test unilaterali destri e test unilaterali sinistri. Un test unilaterale destro viene utilizzato quando si vuole verificare se il valore di una variabile è maggiore di un certo valore, mentre un test unilaterale sinistro viene utilizzato quando si vuole verificare se il valore di una variabile è inferiore a un certo valore.
+
+In generale, il processo di verifica delle ipotesi con un test unilaterale prevede la definizione di un livello di significatività (generalmente 0,05 o 0,01), la scelta del tipo di test (unilaterale destro o sinistro), il calcolo della statistica del test (ad esempio il t-score o lo z-score) e la comparazione della statistica del test con il valore critico corrispondente al livello di significatività e al grado di libertà del test. 
+
+Se la statistica del test è maggiore (per il test unilaterale destro) o minore (per il test unilaterale sinistro) del valore critico, l'ipotesi nulla viene rigettata e si conclude che vi è evidenza statistica a favore dell'ipotesi alternativa. Al contrario, se la statistica del test è minore (per il test unilaterale destro) o maggiore (per il test unilaterale sinistro) del valore critico, l'ipotesi nulla viene accettata e si conclude che non vi è evidenza statistica a favore dell'ipotesi alternativa.
+
+\subsection{Quando la varianza non è nota}
+Ecco un esempio di verifica delle ipotesi sulla media di una popolazione normale nel caso in cui la varianza non è nota in LaTeX:
+
+Sia $X_1, X_2, ..., X_n$ un campione casuale di dimensione $n$ da una popolazione normale con media $\mu$ e varianza $\sigma^2$ sconosciuta. Supponiamo di voler verificare l'ipotesi nulla $H_0: \mu = \mu_0$ contro l'ipotesi alternativa $H_1: \mu \neq \mu_0$ al livello di significatività $\alpha$.
+
+Il test statistic è dato da:
+
+$$
+t = \frac{\overline{X} - \mu_0}{S/\sqrt{n}}
+$$
+
+dove $\overline{X}$ è la media campionaria e $S$ è la deviazione standard campionaria.
+
+Sotto l'ipotesi nulla $H_0$, la statistica del test segue una distribuzione $t$ di Student con $n-1$ gradi di libertà. Possiamo quindi calcolare il valore critico $t_{\alpha/2,n-1}$ tale che:
+
+$$
+P(t_{n-1} < t_{\alpha/2,n-1}) = \frac{\alpha}{2}
+$$
+
+Il valore critico a due code è quindi $-t_{\alpha/2,n-1}$ e $t_{\alpha/2,n-1}$.
+
+Se $t$ cade nella regione critica, cioè se $t < -t_{\alpha/2,n-1}$ o $t > t_{\alpha/2,n-1}$, allora si rifiuta l'ipotesi nulla $H_0$ a favore dell'ipotesi alternativa $H_1$ al livello di significatività $\alpha$. In caso contrario, si accetta l'ipotesi nulla $H_0$.
+
+Quindi, la regola di decisione per la verifica delle ipotesi sulla media di una popolazione normale nel caso in cui la varianza non è nota al livello di significatività $\alpha$ è la seguente:
+\begin{itemize}
+  
+\item Rifiutiamo $H_0$ se $t < -t_{\alpha/2,n-1}$ o $t > t_{\alpha/2,n-1}$.
+\item Accettiamo $H_0$ se $-t_{\alpha/2,n-1} \leq t \leq t_{\alpha/2,n-1}$.
+
+\end{itemize}
+
+
+\section{Verifica se due popolazioni normali hanno la stessa media}
+
+\subsection{Varianze note}
+La verifica se due popolazioni normali hanno la stessa media con le varianze note può essere effettuata tramite il test $Z$ di Student. L'ipotesi nulla è che le due popolazioni abbiano la stessa media ($H_0: \mu_1 = \mu_2$), mentre l'ipotesi alternativa è che abbiano medie diverse ($H_1: \mu_1 \neq \mu_2$).
+
+La statistica del test è data da:
+
+$$Z = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}}$$
+
+dove $\bar{X}_1$ e $\bar{X}_2$ sono le medie campionarie delle due popolazioni, $\sigma_1$ e $\sigma_2$ sono le rispettive deviazioni standard note, $n_1$ e $n_2$ sono le dimensioni campionarie delle due popolazioni e $\mu_1$ e $\mu_2$ sono le medie delle due popolazioni.
+
+Sotto l'ipotesi nulla, la statistica del test segue una distribuzione normale standard $Z \sim N(0,1)$. Si può quindi calcolare il valore di $Z$ e confrontarlo con il valore critico ottenuto dalla distribuzione normale standard per il livello di significatività scelto.
+
+Ad esempio, per un test bilaterale con livello di significatività $\alpha = 0.05$, il valore critico è dato da $z_{\alpha/2} = 1.96$ (perché la distribuzione normale standard è simmetrica intorno allo zero). Se il valore di $Z$ calcolato è maggiore di $1.96$ o minore di $-1.96$, allora si può rifiutare l'ipotesi nulla a favore dell'ipotesi alternativa.
+
+
+\subsection{Varianze non note ma supposte uguali}
+Ecco un esempio di verifica delle ipotesi per testare se due popolazioni normali hanno la stessa media, supponendo che le varianze siano incognite ma uguali, in LaTeX:
+
+Dati due campioni $X_1, X_2, ..., X_n$ e $Y_1, Y_2, ..., Y_m$ estratti da due popolazioni normali con medie $\mu_1$ e $\mu_2$ e varianze $\sigma^2_1$ e $\sigma^2_2$ sconosciute ma uguali, si considera la seguente ipotesi nulla $H_0: \mu_1 = \mu_2$ e l'ipotesi alternativa $H_1: \mu_1 \neq \mu_2$. Si definisce la statistica di test $Z$ come:
+
+$$ Z = \frac{\overline{X} - \overline{Y}}{\sqrt{\frac{S_1^2}{n} + \frac{S_2^2}{m}}} $$
+
+dove $\overline{X}$ e $\overline{Y}$ sono le medie campionarie dei due campioni, $S_1^2$ e $S_2^2$ sono le varianze campionarie non corrette e $n$ e $m$ sono le dimensioni dei due campioni. Si assume che $Z$ segua una distribuzione normale standard sotto l'ipotesi nulla.
+
+A questo punto, si calcola il valore critico di $Z$ corrispondente al livello di significatività $\alpha/2$ (dove $\alpha$ è il livello di significatività scelto) utilizzando la tabella della distribuzione normale standard o un software statistico. L'intervallo di accettazione sarà quindi dato da $-Z_{\alpha/2} \leq Z \leq Z_{\alpha/2}$.
+
+Infine, si calcola il valore della statistica di test $Z$ a partire dai dati del campione e si confronta con il valore critico calcolato precedentemente. Se il valore di $Z$ rientra nell'intervallo di accettazione, si accetta l'ipotesi nulla $H_0$ al livello di significatività scelto; altrimenti, si rigetta l'ipotesi nulla e si accetta l'ipotesi alternativa $H_1$.
+
+\subsection{Varianze non note e diverse}
+La verifica delle ipotesi per confrontare le medie di due popolazioni normali con varianze incognite e diverse può essere effettuata utilizzando il test t di Student.
+
+L'ipotesi nulla è che le medie delle due popolazioni siano uguali, mentre l'ipotesi alternativa è che le medie siano diverse.
+
+La statistica del test t è data da:
+
+$$
+t = \frac{\bar{x}_1 - \bar{x}_2}{s_{p}\sqrt{\frac{1}{n_1}+\frac{1}{n_2}}}
+$$
+
+dove $\bar{x}_1$ e $\bar{x}_2$ sono le medie campionarie delle due popolazioni, $n_1$ e $n_2$ sono le dimensioni dei campioni, $s_{p}$ è la stima comune della deviazione standard delle due popolazioni, data da:
+
+$$
+s_{p}=\sqrt{\frac{(n_1-1)s_1^2+(n_2-1)s_2^2}{n_1+n_2-2}}
+$$
+
+dove $s_1^2$ e $s_2^2$ sono le varianze campionarie delle due popolazioni.
+
+La statistica t segue una distribuzione t di Student con $n_1+n_2-2$ gradi di libertà. L'intervallo di confidenza bilaterale per la differenza tra le medie delle due popolazioni con un livello di confidenza del 95% può essere calcolato come:
+
+$$
+(\bar{x}_1 - \bar{x}_2) \pm t_{\alpha/2,n_1+n_2-2}s_p \sqrt{\frac{1}{n_1}+\frac{1}{n_2}}
+$$
+
+dove $t_{\alpha/2,n_1+n_2-2}$ è il valore critico della distribuzione t di Student con $\alpha/2$ di probabilità di coda a sinistra e $n_1+n_2-2$ gradi di libertà.
+
+Per accettare o rifiutare l'ipotesi nulla, confrontiamo il valore della statistica t con il valore critico della distribuzione t di Student. Se il valore assoluto della statistica t è maggiore del valore critico, allora rifiutiamo l'ipotesi nulla e concludiamo che le medie delle due popolazioni sono significativamente diverse. Altrimenti, accettiamo l'ipotesi nulla e concludiamo che non c'è sufficiente evidenza statistica per concludere che le medie delle due popolazioni siano diverse.
+
+
+\section{Verifica di ipotesi sulla varianza di una popolazione normale}
+
+\subsection{Verifica se hanno la stessa varianza - media e varianza incognite DA FIXARE}
+
+\section{La verifica di ipotesi su ua popolazione di Bernoulli}
+
+
+
+
+
