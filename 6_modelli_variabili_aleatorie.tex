@@ -60,4 +60,256 @@ $n$ è molto grande e $p$ molto piccolo, ponendo $\lambda = np$:
 
 \subsection{Calcolo esplicito della distribuzione di Poisson}
 
+Il calcolo esplicito della distribuzione di Poisson si basa sulla seguente formula per la funzione di probabilità:
 
+$$P(X=k) = \frac{e^{-\lambda} \lambda^k}{k!}$$
+
+dove $k$ è il numero di eventi che si verificano in un certo intervallo di tempo o di spazio, $\lambda$ è il parametro della distribuzione che rappresenta il numero medio di eventi in quell'intervallo. 
+
+Per calcolare la probabilità di ottenere un certo numero di eventi $k$, basta sostituire i valori di $k$ e $\lambda$ nella formula e fare i calcoli. Ad esempio, supponiamo di voler calcolare la probabilità di osservare esattamente 2 eventi in un intervallo di tempo di un'ora, sapendo che in media accadono 3 eventi in un'ora. In questo caso, la formula diventa:
+
+$$P(X=2) = \frac{e^{-3} 3^2}{2!} \approx 0.224$$
+
+Quindi la probabilità di osservare esattamente 2 eventi in un'ora, con una media di 3 eventi in un'ora, è di circa il 22,4%.
+
+\section{Variabili aleatorie ipergeometriche}
+Le variabili aleatorie ipergeometriche sono utilizzate per modellare situazioni in cui si effettuano estrazioni senza reinserimento da un insieme finito di elementi che si distinguono in due categorie (ad esempio, in un lotto di componenti elettronici, quelli funzionanti e quelli difettosi).
+
+In particolare, si consideri un insieme di $N$ elementi, dei quali $K$ appartengono alla categoria 1 e $N-K$ alla categoria 2. Si effettuano $n$ estrazioni senza reinserimento e si vuole determinare la probabilità che $k$ estrazioni diano un esito di categoria 1. La variabile aleatoria $X$ che misura il numero di successi (cioè il numero di elementi estratti appartenenti alla categoria 1) è una variabile aleatoria ipergeometrica.
+
+La funzione di probabilità di una variabile aleatoria ipergeometrica è data dalla seguente formula:
+
+$$ P(X=k) = \frac{{K \choose k}{N-K \choose n-k}}{ {N \choose n}} $$
+
+dove ${a \choose b}$ rappresenta il coefficiente binomiale che indica il numero di modi in cui si possono scegliere $b$ elementi da un insieme di $a$ elementi.
+
+Il valore atteso di una variabile aleatoria ipergeometrica è:
+
+$$ E(X) = n\frac{K}{N} $$
+
+mentre la varianza è:
+
+$$ Var(X) = n\frac{K}{N}\frac{N-K}{N}\frac{N-n}{N-1} $$
+
+Le variabili aleatorie ipergeometriche sono utili, ad esempio, nella valutazione della qualità di un lotto di componenti elettronici, in cui si vuole stimare la proporzione di componenti funzionanti effettuando un campionamento senza reinserimento.
+
+\section{Variabili aleatorie uniformi}
+Una variabile aleatoria uniforme è una distribuzione di probabilità in cui ogni valore possibile dell'intervallo di una variabile casuale ha la stessa probabilità di essere scelto. In altre parole, la probabilità di ottenere un valore in un certo intervallo è proporzionale alla lunghezza dell'intervallo.
+
+Esistono due tipi di variabili aleatorie uniformi: la variabile aleatoria uniforme continua e la variabile aleatoria uniforme discreta.
+
+La variabile aleatoria uniforme continua è caratterizzata dalla funzione di densità di probabilità (pdf):
+
+$$
+f(x) = \begin{cases}
+\frac{1}{b-a} & \text{per } a \leq x \leq b \\
+0 & \text{altrimenti}
+\end{cases}
+$$
+
+dove $a$ e $b$ sono i limiti inferiori e superiori dell'intervallo di valori possibili per la variabile casuale. La funzione di distribuzione cumulativa (cdf) è data da:
+
+$$
+F(x) = \begin{cases}
+0 & \text{per } x < a \\
+\frac{x-a}{b-a} & \text{per } a \leq x \leq b \\
+1 & \text{per } x > b
+\end{cases}
+$$
+
+La variabile aleatoria uniforme discreta è caratterizzata dalla funzione di massa di probabilità (pmf):
+
+$$
+P(X=k) = \begin{cases}
+\frac{1}{n} & \text{per } k=1,2,\ldots,n \\
+0 & \text{altrimenti}
+\end{cases}
+$$
+
+dove $n$ è il numero di valori possibili per la variabile casuale. La funzione di distribuzione cumulativa (cdf) è data da:
+
+$$
+F(k) = \begin{cases}
+0 & \text{per } k < 1 \\
+\frac{k-1}{n-1} & \text{per } 1 \leq k \leq n \\
+1 & \text{per } k > n
+\end{cases}
+$$
+
+In entrambi i casi, il valore atteso della variabile casuale è dato dalla formula:
+
+$$
+E[X] = \frac{a+b}{2} \text{ o } \frac{n+1}{2}
+$$
+
+a seconda che si tratti di una variabile aleatoria uniforme continua o discreta. La varianza della variabile casuale è invece data da:
+
+$$
+Var(X) = \frac{(b-a)^2}{12} \text{ o } \frac{n^2-1}{12}
+$$
+
+a seconda che si tratti di una variabile aleatoria uniforme continua o discreta.
+
+\section{Variabili aleatorie normali}
+Le variabili aleatorie normali (o gaussiane) sono molto importanti nella teoria della probabilità e nelle applicazioni pratiche, poiché molti fenomeni naturali e sociali seguono una distribuzione normale. 
+
+Una variabile aleatoria normale, indicata con $X$, è caratterizzata da due parametri: la media $\mu$ e la deviazione standard $\sigma$. La sua funzione di densità di probabilità (pdf) è data dalla seguente formula:
+
+$$f(x) = \frac{1}{\sqrt{2\pi\sigma^2}}e^{-\frac{(x-\mu)^2}{2\sigma^2}}$$
+
+dove $e$ è il numero di Nepero (costante matematica approssimativamente pari a 2,71828), $\mu$ è il rapporto tra la circonferenza e il diametro di un cerchio (approssimativamente pari a 3,14159), $\mu$ rappresenta il valore atteso della variabile e $\sigma$ la sua deviazione standard.
+
+La funzione di distribuzione cumulativa (cdf) di $X$ è invece data dalla seguente formula:
+
+$$F(x) = \int_{-\infty}^x f(t) dt = \frac{1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^x e^{-\frac{(t-\mu)^2}{2\sigma^2}} dt$$
+
+La curva di una distribuzione normale è a forma di campana, simmetrica rispetto alla media $\mu$. Il suo valore atteso, la mediana e la moda coincidono, ovvero:
+
+$$E[X] = \mathrm{mediana}(X) = \mathrm{moda}(X) = \mu$$
+
+Inoltre, il $68\%$ dei dati si trova entro un intervallo di una deviazione standard dalla media, il $95\%$ entro due deviazioni standard e il $99,7\%$ entro tre deviazioni standard. Questa proprietà è nota come la regola empirica o regola del 68-95-99,7.
+
+Le variabili aleatorie normali standardizzate, indicate con $Z$, sono ottenute dalla trasformazione:
+
+$$Z = \frac{X-\mu}{\sigma}$$
+
+e hanno media zero e deviazione standard pari a uno. La funzione di distribuzione cumulativa di $Z$ è indicata con $\Phi(z)$ e viene chiamata funzione di distribuzione cumulativa standard normale. Esistono diverse tabelle o calcolatori online che permettono di calcolare le probabilità associate a $\Phi(z)$ per diversi valori di $z$.
+
+\section{Variabili aleatorie esponenziali}
+
+Le variabili aleatorie esponenziali sono un tipo di distribuzione di probabilità continua che descrive il tempo tra due eventi successivi in un processo di Poisson. Ad esempio, se si stanno monitorando gli arrivi di clienti in un negozio e si vuole sapere quanto tempo passerà tra un cliente e il successivo, la distribuzione esponenziale può essere usata per modellare il tempo di attesa.
+
+La funzione densità di probabilità (pdf) della distribuzione esponenziale è:
+
+$$f(x;\lambda) = \begin{cases} \lambda e^{-\lambda x}, & x \geq 0 \\ 0, & x < 0 \end{cases}$$
+
+dove $\lambda$ è il parametro di scala della distribuzione. Il valore atteso della distribuzione esponenziale è dato da:
+
+$$E[X] = \frac{1}{\lambda}$$
+
+e la deviazione standard è:
+
+$$Var(X) = \frac{1}{\lambda^2}$$
+
+Inoltre, la distribuzione esponenziale soddisfa la proprietà di mancanza di memoria, che significa che la probabilità che un evento si verifichi dopo un certo intervallo di tempo dipende solo dal tempo trascorso e non dal tempo trascorso finora. Questa proprietà la rende utile per modellare eventi rari e imprevisti, come guasti a macchinari o incidenti.
+
+\subsection{Processo di Poisson}
+
+Il processo di Poisson è un processo stocastico che descrive il numero di eventi che si verificano in un intervallo di tempo, assumendo che questi eventi si verifichino in modo casuale e indipendente nel tempo.
+
+In forma matematica, il processo di Poisson è definito come:
+
+$$ N(t) \sim \text{Pois}(\lambda t) $$
+
+dove $N(t)$ è la variabile aleatoria che rappresenta il numero di eventi che si verificano nell'intervallo di tempo $[0,t]$ e $\lambda$ è il parametro di intensità del processo, che rappresenta il numero medio di eventi che si verificano in unità di tempo.
+
+La funzione di probabilità di $N(t)$ è data dalla distribuzione di Poisson:
+
+$$ P(N(t) = k) = e^{-\lambda t} \frac{(\lambda t)^k}{k!} $$
+
+dove $k$ è il numero di eventi che si verificano nell'intervallo di tempo $[0,t]$.
+
+Il processo di Poisson gode delle proprietà di stazionarietà e indipendenza dei tratti, il che significa che il numero di eventi che si verificano in un intervallo di tempo dipende solo dalla lunghezza dell'intervallo e non dalla posizione dell'intervallo nel tempo, e che gli eventi che si verificano in diversi intervalli di tempo sono indipendenti tra loro.
+
+\section{Variabili aleatorie di tipo gamma}
+La variabile aleatoria di tipo gamma è una generalizzazione della distribuzione esponenziale e della distribuzione di Poisson. Una variabile aleatoria $X$ si dice distribuita secondo una legge di tipo gamma con parametri $\alpha$ e $\lambda$ se la sua funzione di densità di probabilità è data da:
+
+$$f(x) = \begin{cases}
+\dfrac{\lambda^{\alpha}x^{\alpha-1}e^{-\lambda x}}{\Gamma(\alpha)}, & x > 0 \\
+0, & x \leq 0
+\end{cases}$$
+
+dove $\Gamma(\alpha)$ è la funzione Gamma, definita come:
+
+$$\Gamma(\alpha) = (n - 1)!$$
+
+Il parametro $\alpha$ è un intero positivo e rappresenta il numero di eventi che si verificano in un certo intervallo di tempo, mentre il parametro $\lambda$ rappresenta la frequenza con cui questi eventi si verificano.
+
+La variabile aleatoria di tipo gamma è particolarmente utile per modellare processi di conteggio con tassi di eventi variabili nel tempo. In particolare, se $X_i$ è la durata del $i$-esimo intervallo di tempo tra due eventi consecutivi, allora la somma $Y_n = X_1 + X_2 + \dots + X_n$ segue una distribuzione di tipo gamma con parametri $\alpha=n$ e $\lambda$ uguale alla frequenza media degli eventi. 
+
+Il valore atteso di una variabile aleatoria di tipo gamma è pari a $\dfrac{\alpha}{\lambda}$, mentre la varianza è pari a $\dfrac{\alpha}{\lambda^2}$.
+
+\subsection{Relazione tra chi-quadro e gamma}
+La relazione tra la distribuzione chi-quadrato e la distribuzione gamma è che la distribuzione chi-quadrato è un caso particolare della distribuzione gamma.
+
+In particolare, se una variabile aleatoria $Z$ segue una distribuzione normale standard, allora la somma dei quadrati di $k$ campioni estratti da $Z$ segue una distribuzione chi-quadrato con $k$ gradi di libertà.
+
+Inoltre, se $X_1, X_2, \ldots, X_n$ sono variabili aleatorie indipendenti e identicamente distribuite con distribuzione normale standard, allora la somma dei loro quadrati segue una distribuzione chi-quadrato con $n$ gradi di libertà.
+
+La densità di probabilità della distribuzione gamma è data da:
+
+$$
+f(x) = \frac{\beta^\alpha}{\Gamma(\alpha)} x^{\alpha-1} e^{-\beta x} \quad x \geq 0
+$$
+
+dove $\alpha$ e $\beta$ sono i parametri della distribuzione, e $\Gamma(\alpha)$ è la funzione Gamma.
+
+La distribuzione chi-quadrato con $k$ gradi di libertà è una distribuzione gamma con $\alpha = k/2$ e $\beta = 1/2$. In particolare, la densità di probabilità della distribuzione chi-quadrato con $k$ gradi di libertà è:
+
+$$
+f(x) = \frac{1}{2^{k/2} \Gamma(k/2)} x^{k/2-1} e^{-x/2} \quad x \geq 0
+$$
+
+Quindi la distribuzione chi-quadrato è un caso particolare della distribuzione gamma, dove i parametri della distribuzione gamma sono determinati dal numero di gradi di libertà della distribuzione chi-quadrato.
+
+
+\section{Le distribuzioni T}
+Le distribuzioni T sono una famiglia di distribuzioni di probabilità continue che hanno una forma simile alla distribuzione normale standard, ma che dipendono anche dal parametro chiamato "gradi di libertà". 
+
+In particolare, la distribuzione T con k gradi di libertà è definita come la distribuzione della variabile casuale:
+
+$$ T = \frac{Z}{\sqrt{V/k}} $$
+
+dove Z è una variabile casuale standard normale, V è una variabile casuale chi-quadro con k gradi di libertà e Z e V sono indipendenti. 
+
+La distribuzione T è spesso utilizzata quando la deviazione standard della popolazione non è nota e deve essere stimata dalla deviazione standard campionaria. In questo caso, la statistica del test T è definita come:
+
+$$ T = \frac{\bar{X}-\mu}{S/\sqrt{n}} $$
+
+dove $\bar{X}$ è la media campionaria, $\mu$ è la media della popolazione, S è la deviazione standard campionaria e n è la dimensione del campione. La distribuzione T con n-1 gradi di libertà viene utilizzata per calcolare la probabilità di ottenere una statistica T data una determinata ipotesi sulla media della popolazione. 
+
+Le distribuzioni T sono utilizzate in diverse applicazioni statistiche, come ad esempio nell'analisi dei test t, nella regressione lineare, nella valutazione delle differenze tra gruppi e in altri tipi di analisi.
+
+Il valore atteso di una distribuzione T non è zero in generale, ma dipende dai gradi di libertà della distribuzione. In particolare, se la distribuzione T ha $n$ gradi di libertà, il valore atteso è zero se $n>1$, mentre se $n=1$ il valore atteso non esiste. 
+
+La varianza di una distribuzione T con $n$ gradi di libertà è pari a $\frac{n}{n-2}$ se $n>2$, mentre se $n\leq2$ la varianza non esiste.
+
+\section{Le distribuzioni F}
+La distribuzione F è una distribuzione di probabilità continua che compare comunemente nell'ambito dell'analisi della varianza (ANOVA) e dei test statistici basati sul rapporto di due varianze.
+
+La distribuzione F ha due gradi di libertà, uno per il numeratore e uno per il denominatore. La distribuzione F è quindi definita da due parametri, noti come gradi di libertà del numeratore e del denominatore.
+
+Il valore atteso della distribuzione F dipende dai gradi di libertà del numeratore e del denominatore ed è definito come:
+
+$$ E(X) = \begin{cases} 
+\dfrac{d_2}{d_2-2} & \text{se } d_2 > 2 \\
+\text{undefined} & \text{se } d_2 \leq 2 
+\end{cases} $$
+
+dove $d_2$ rappresenta i gradi di libertà del denominatore.
+
+La varianza della distribuzione F dipende anch'essa dai gradi di libertà del numeratore e del denominatore ed è definita come:
+
+$$ Var(X) = \begin{cases} 
+\dfrac{2d_2^2(d_1+d_2-2)}{d_1(d_2-2)^2(d_2-4)} & \text{se } d_2 > 4 \\
+\text{undefined} & \text{se } d_2 \leq 4 
+\end{cases} $$
+
+dove $d_1$ rappresenta i gradi di libertà del numeratore.
+
+La distribuzione F è simmetrica rispetto al valore $1$ e assume valori positivi. La sua forma dipende dai gradi di libertà del numeratore e del denominatore e ha una coda lunga sulla destra quando il denominatore è piccolo rispetto al numeratore. La distribuzione F viene solitamente utilizzata per confrontare la varianza di due campioni indipendenti.
+
+\section{Distribuzione logistica}
+La distribuzione logistica è una distribuzione di probabilità continua utilizzata spesso in statistica e modellistica per descrivere l'evoluzione di un processo nel tempo.
+
+La funzione di densità di probabilità (PDF) della distribuzione logistica è data da:
+
+$$f(x) = \frac{e^{-(x-\mu)/s}}{s(1+e^{-(x-\mu)/s})^2}$$
+
+dove $\mu$ è il parametro di posizione che indica il valore atteso della distribuzione e $s$ è il parametro di scala. La funzione di distribuzione cumulativa (CDF) può essere ottenuta integrando la PDF:
+
+$$F(x) = \frac{1}{1+e^{-(x-\mu)/s}}$$
+
+Il parametro di scala $s$ controlla l'inclinazione della curva della distribuzione logistica. Più grande è il valore di $s$, più stretta sarà la curva e più concentrati saranno i dati attorno al valore atteso $\mu$.
+
+La distribuzione logistica può essere utilizzata per modellare diverse variabili aleatorie, come ad esempio la distribuzione dei punteggi dei test standardizzati o la distribuzione della crescita di popolazioni biologiche.
