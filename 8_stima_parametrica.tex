@@ -1,0 +1,207 @@
+\chapter{Stima parametrica}
+La stima parametrica è un metodo utilizzato in statistica inferenziale per stimare i parametri di una distribuzione di probabilità che descrive i dati di una popolazione. In questo metodo, si suppone che la distribuzione di probabilità della popolazione sia nota a priori e si cerca di stimare i suoi parametri. 
+
+Il processo di stima parametrica coinvolge due fasi: la scelta di una funzione di probabilità appropriata per descrivere la popolazione e la stima dei parametri di questa funzione sulla base dei dati campionati.
+
+Una volta scelta la funzione di probabilità, il passo successivo consiste nell'utilizzare i dati campionati per stimare i parametri della distribuzione. Ci sono diversi metodi di stima dei parametri, tra cui il metodo dei momenti, il metodo della massima verosimiglianza e il metodo di Bayes.
+
+La stima parametrica può essere utile quando si ha una buona conoscenza della distribuzione di probabilità della popolazione, ma non si ha accesso all'intera popolazione. Tuttavia, se la distribuzione di probabilità della popolazione è sconosciuta o non si può assumere, allora si può utilizzare la stima non parametrica.
+
+\section{Stima di massima verosimilarità}
+La stima di massima verosimiglianza (maximum likelihood estimation, in inglese) è un metodo di stima parametrica che cerca di ottenere il valore del parametro di una distribuzione di probabilità che rende più probabile l'osservazione dei dati campionari.
+
+In pratica, si suppone che i dati osservati siano stati generati da una distribuzione di probabilità nota, ma con un valore ignoto del parametro. L'obiettivo è di trovare il valore del parametro che massimizza la probabilità (o verosimiglianza) di ottenere i dati osservati.
+
+Ad esempio, supponiamo di avere un campione di n osservazioni estratto da una distribuzione normale con media $\mu$ e varianza $\sigma^2$ ignote. La stima di massima verosimiglianza cerca di trovare i valori di $\mu$ e $\sigma^2$ che massimizzano la probabilità di ottenere il campione osservato.
+
+La funzione di verosimiglianza è data dal prodotto delle densità di probabilità dei singoli dati:
+
+$$L(\mu,\sigma^2|\mathbf{x})=\prod_{i=1}^n f(x_i|\mu,\sigma^2)$$
+
+dove $\mathbf{x}$ è il vettore delle osservazioni, $f(x_i|\mu,\sigma^2)$ è la densità di probabilità della distribuzione normale con media $\mu$ e varianza $\sigma^2$ valutata in $x_i$.
+
+Per trovare i valori di $\mu$ e $\sigma^2$ che massimizzano $L(\mu,\sigma^2|\mathbf{x})$, si calcola la derivata logaritmica della funzione di verosimiglianza rispetto ai parametri:
+
+$$\frac{\partial \ln L(\mu,\sigma^2|\mathbf{x})}{\partial \mu}=0$$
+
+$$\frac{\partial \ln L(\mu,\sigma^2|\mathbf{x})}{\partial \sigma^2}=0$$
+
+Risolvendo queste equazioni, si ottengono le stime di massima verosimiglianza per $\mu$ e $\sigma^2$. Queste stime sono note per essere non polarizzate e asintoticamente efficienti, il che significa che per campioni sufficientemente grandi, si avvicinano al valore vero del parametro con una precisione elevata.
+
+\subsection{Stima dei tempi di vita}
+La stima della distribuzione dei tempi di vita di una popolazione è un problema comune nell'analisi dei dati. In generale, i tempi di vita possono essere modellati da diverse distribuzioni di probabilità, tra cui la distribuzione esponenziale, la distribuzione di Weibull e la distribuzione di log-normale.
+
+Una tecnica comune per stimare la distribuzione dei tempi di vita è l'analisi della sopravvivenza, che è basata sulla stima della funzione di sopravvivenza della popolazione. La funzione di sopravvivenza descrive la probabilità che un individuo sopravviva fino a un certo momento.
+
+La stima della funzione di sopravvivenza può essere fatta utilizzando la tecnica di Kaplan-Meier, che è basata sull'analisi dei dati di sopravvivenza censurati. La censura si verifica quando la durata dell'evento non è osservata completamente, ad esempio perché il soggetto esce dallo studio prima che l'evento si verifichi o perché lo studio termina prima che tutti i soggetti abbiano sperimentato l'evento.
+
+In alternativa, la distribuzione dei tempi di vita può essere stimata utilizzando la regressione di Cox, che è un metodo di analisi della sopravvivenza basato sulla modellizzazione della funzione di rischio, che è il tasso istantaneo di fallimento in un dato momento. La regressione di Cox permette di modellare l'effetto di variabili predittive sulla sopravvivenza, come ad esempio l'età o il sesso.
+
+In generale, la scelta della tecnica di stima della distribuzione dei tempi di vita dipende dalle caratteristiche dei dati e dagli obiettivi dell'analisi.
+
+\section{Intervalli di confidenza}
+Gli intervalli di confidenza sono una tecnica statistica che viene utilizzata per stimare un parametro di una popolazione sconosciuta basandosi sui dati raccolti da un campione. L'obiettivo è quello di fornire un intervallo di valori entro il quale si ritiene che il parametro della popolazione si trovi con una certa probabilità.
+
+In generale, l'intervallo di confidenza si costruisce utilizzando la stima del parametro ottenuta dal campione e l'errore standard della stima. L'errore standard è una misura della variabilità delle stime del parametro che si otterrebbero se si ripetesse il campionamento più volte.
+
+La formula generale per calcolare un intervallo di confidenza per una stima di un parametro è:
+
+intervallo di confidenza $=$ stima del parametro $\pm$ margine di errore
+
+dove il margine di errore dipende dal livello di confidenza desiderato e dall'errore standard della stima.
+
+Il livello di confidenza rappresenta la probabilità che l'intervallo di confidenza contenga effettivamente il parametro della popolazione. In generale, i livelli di confidenza più comuni sono il $90\%$, il $95\%$ e il $99\%$.
+
+In sintesi, gli intervalli di confidenza forniscono un modo per quantificare l'incertezza nelle stime dei parametri della popolazione e per comunicare la precisione delle stime ai lettori.
+
+
+Poiché la variabile aleatoria X ha una distribuzione normale standard e una varianza nota, possiamo utilizzare la distribuzione normale standardizzata per calcolare l'intervallo di confidenza.
+
+L'intervallo di confidenza al $95\%$ per la media della variabile aleatoria X è dato da:
+
+$$(\bar{X}-1.96\frac{\sigma}{\sqrt{n}},\bar{X}+1.96\frac{\sigma}{\sqrt{n}})$$
+
+Dove $\bar{X}$ è la media campionaria, $\sigma$ è la deviazione standard nota della variabile aleatoria X, e $n$ è la dimensione del campione.
+
+Nota che il valore 1.96 è il quantile corrispondente al livello di confidenza del $95\%$ della distribuzione normale standardizzata.
+
+Sostituendo i valori noti, otteniamo l'intervallo di confidenza al $95\%$:
+
+$$(\bar{X}-1.96\frac{1}{\sqrt{n}},\bar{X}+1.96\frac{1}{\sqrt{n}})$$
+
+\subsection{Intervalli di confidenza per la media di una normale con varianza incognita}
+Gli intervalli di confidenza per la media di una distribuzione normale con varianza incognita si basano sulla distribuzione t di Student.
+
+L'intervallo di confidenza per la media di una distribuzione normale con varianza incognita e una dimensione del campione n inferiore a 30 è dato dalla seguente formula:
+
+$$
+\bar{X} \pm t_{n-1,\alpha/2}\frac{s}{\sqrt{n}}
+$$
+
+dove $\bar{X}$ è la media campionaria, $s$ è la deviazione standard campionaria, $n$ è la dimensione del campione e $t_{n-1,\alpha/2}$ è il valore t corrispondente ai gradi di libertà $n-1$ e al livello di confidenza desiderato $\alpha$.
+
+Ad esempio, per calcolare un intervallo di confidenza al $95\%$ per la media di una distribuzione normale con una dimensione del campione di 25, una media campionaria di 10 e una deviazione standard campionaria di 2, si ha:
+
+$$
+10 \pm t_{24,0.025}\frac{2}{\sqrt{25}}
+$$
+
+Il valore t corrispondente ai gradi di libertà 24 e al livello di confidenza del $95\%$ è di circa 2,064. Quindi, l'intervallo di confidenza al $95\%$ per la media è:
+
+$$
+10 \pm 0.826 = [9.174, 10.826]
+$$
+
+Ciò significa che con una confidenza del $95\%$, la media reale della popolazione si trova all'interno dell'intervallo di [9.174, 10.826].
+
+
+\subsection{Intervalli di confidenza per la varianza di una distribuzione normale}
+
+
+Gli intervalli di confidenza per la varianza di una distribuzione normale sono definiti in base alla distribuzione campionaria della statistica test $\frac{(n-1)S^2}{\sigma^2}$, dove $S^2$ è la varianza campionaria e $\sigma^2$ è la varianza della popolazione.
+
+Se consideriamo un campione di $n$ osservazioni estratte da una popolazione normale con varianza $\sigma^2$ incognita, l'intervallo di confidenza per la varianza al livello di confidenza $1-\alpha$ può essere espresso come:
+
+$$(\frac{(n-1)S^2}{\chi_{\alpha/2,n-1}^2},\frac{(n-1)S^2}{\chi_{1-\alpha/2,n-1}^2})$$
+
+dove $\chi_{\alpha/2,n-1}^2$ e $\chi_{1-\alpha/2,n-1}^2$ sono i quantili della distribuzione chi-quadro con $n-1$ gradi di libertà al livello di significatività $\alpha/2$ e $1-\alpha/2$, rispettivamente.
+
+In questo modo, l'intervallo di confidenza può essere interpretato come la regione in cui ci aspettiamo che cada la vera varianza della popolazione con una probabilità di $1-\alpha$.
+
+
+\section{Stime per la differenza tra le medie di due normali}
+
+Per l'intervallo di confidenza per la differenza tra le medie con varianze note e uguali:
+
+$$
+\bar{X}_1 - \bar{X}_2 \pm z_{\alpha/2} \cdot \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+$$
+
+Per l'intervallo di confidenza per la differenza tra le medie con varianze note e diverse:
+
+$$
+\bar{X}_1 - \bar{X}_2 \pm z_{\alpha/2} \cdot \sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}
+$$
+
+Per l'intervallo di confidenza per la differenza tra le medie con varianze sconosciute e uguali:
+
+$$
+\bar{X}_1 - \bar{X}_2 \pm t_{\alpha/2, \,n_1+n_2-2} \cdot \sqrt{\frac{(n_1-1)s_1^2 + (n_2-1)s_2^2}{n_1+n_2-2}} \cdot \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
+$$
+
+Per l'intervallo di confidenza per la differenza tra le medie con varianze sconosciute e diverse:
+
+$$
+\bar{X}_1 - \bar{X}_2 \pm t_{\alpha/2, \,\nu} \cdot \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}
+$$
+
+dove $\bar{X}_1$ e $\bar{X}_2$ sono le medie campionarie delle due normali, $\sigma_1^2$ e $\sigma_2^2$ sono le varianze delle due normali, $s_1^2$ e $s_2^2$ sono le varianze campionarie delle due normali, $n_1$ e $n_2$ sono le dimensioni dei campioni, $\alpha$ è il livello di significatività, $z_{\alpha/2}$ e $t_{\alpha/2, \, \nu}$ sono i valori critici delle distribuzioni normale e t di Student, rispettivamente, e $\nu$ è il numero di gradi di libertà, dato da $\nu = n_1 + n_2 - 2$.
+
+
+\section{Intervalli di confidenza approssimati per la media di una Bernoulliana}
+
+Gli intervalli di confidenza per la media di una variabile aleatoria di Bernoulli possono essere approssimati utilizzando la distribuzione normale. 
+
+Supponiamo di avere un campione di dimensione $n$ da una popolazione di Bernoulli con una probabilità di successo incognita $p$. Sia $\hat{p}$ la proporzione campionaria di successi. Allora, la media campionaria $\overline{X}$ ha una distribuzione normale approssimata con media $\mu_{\overline{X}} = p$ e varianza $\sigma^2_{\overline{X}} = \frac{p(1-p)}{n}$. 
+
+Per calcolare l'intervallo di confidenza per la media della popolazione, possiamo utilizzare la stessa formula dell'intervallo di confidenza per la media di una normale con varianza incognita, sostituendo la deviazione standard campionaria con la deviazione standard campionaria approssimata:
+
+$$
+\overline{X} \pm z_{\alpha/2} \frac{\sqrt{\hat{p}(1-\hat{p})/n}}{\sqrt{n}}
+$$
+
+dove $z_{\alpha/2}$ è il valore critico della distribuzione normale standard per un livello di confidenza del $(1-\alpha)\%$. 
+
+Notare che l'approssimazione con la distribuzione normale è valida solo se $np \geq 5$ e $n(1-p) \geq 5$.
+
+\section{Intervalli di confidenza per la media di una distribuzione esponenziale}
+Gli intervalli di confidenza per la media di una distribuzione esponenziale dipendono dalla specifica distribuzione dei dati e dal livello di confidenza desiderato. Tuttavia, quando il numero di campioni è grande, si può utilizzare l'intervallo di confidenza approssimato della media:
+
+$$\bar{X} \pm z_{\alpha/2} \frac{s}{\sqrt{n}}$$
+
+dove $\bar{X}$ è la media campionaria, $s$ è la deviazione standard campionaria, $n$ è il numero di campioni e $z_{\alpha/2}$ è il valore critico corrispondente al livello di confidenza desiderato $\alpha$.
+
+Nel caso della distribuzione esponenziale, la media è $\frac{1}{\lambda}$ e la varianza è $\frac{1}{\lambda^2}$. Pertanto, la deviazione standard è $\frac{1}{\lambda}\sqrt{n}$ e l'intervallo di confidenza approssimato diventa:
+
+$$\frac{1}{\bar{X}} \pm z_{\alpha/2} \frac{1}{\bar{X}\sqrt{n}}$$
+
+dove $\bar{X}$ è la media campionaria e $n$ è il numero di campioni. Questo intervallo di confidenza approssimato può essere utilizzato solo se il numero di campioni è abbastanza grande (solitamente $n>30$). Se il numero di campioni è piccolo, si deve utilizzare una distribuzione t-student invece di una distribuzione normale per calcolare il valore critico.
+
+
+\section{Valutare l'efficienza degli stimatori puntuali}
+
+Per valutare la correttezza di uno stimatore mediante il bias, è necessario calcolare la differenza tra il valore atteso dello stimatore e il valore del parametro che si sta stimando. Se tale differenza è uguale a zero, lo stimatore è corretto.
+
+Formalmente, il bias di uno stimatore $\hat{\theta}$ del parametro $\theta$ è definito come:
+
+$$
+\text{Bias}(\hat{\theta}) = E(\hat{\theta}) - \theta
+$$
+
+dove $E(\hat{\theta})$ rappresenta il valore atteso dello stimatore $\hat{\theta}$ e $\theta$ rappresenta il valore vero del parametro.
+
+Se $\text{Bias}(\hat{\theta}) = 0$, lo stimatore è detto non distorto o corretto. Se invece $\text{Bias}(\hat{\theta}) \neq 0$, lo stimatore è distorto e l'entità del bias indica la direzione e l'entità dello scostamento dall'effettivo valore del parametro.
+
+Inoltre, se $\text{Bias}(\hat{\theta}) \geq 0$ per ogni possibile valore del parametro $\theta$, lo stimatore è detto non negativamente distorto.
+
+In sintesi, il bias rappresenta la differenza tra il valore atteso dello stimatore e il valore vero del parametro. Se tale differenza è uguale a zero, lo stimatore è corretto.
+
+
+\section{Stimatori Bayesiani}
+Gli stimatori bayesiani sono un tipo di stimatore utilizzato nell'ambito della statistica bayesiana. In questo approccio, si parte da una distribuzione di probabilità a priori per il parametro che si vuole stimare, detta distribuzione a priori. Successivamente, si utilizza la legge di Bayes per ottenere la distribuzione a posteriori, ovvero la distribuzione di probabilità del parametro dato il campione osservato. Infine, la stima del parametro viene ottenuta come valore atteso della distribuzione a posteriori.
+
+Più in dettaglio, se $\theta$ rappresenta il parametro da stimare e $X_1,\ldots,X_n$ rappresentano i dati osservati, la distribuzione a posteriori è data da:
+
+$$p(\theta | X_1, \ldots, X_n) = \frac{p(X_1, \ldots, X_n | \theta) p(\theta)}{p(X_1, \ldots, X_n)}$$
+
+dove $p(X_1, \ldots, X_n | \theta)$ rappresenta la verosimiglianza dei dati, $p(\theta)$ rappresenta la distribuzione a priori del parametro e $p(X_1, \ldots, X_n)$ rappresenta la probabilità marginale dei dati.
+
+La stima bayesiana del parametro è quindi data da:
+
+$$\hat{\theta}_{\text{Bayes}} = \int \theta p(\theta | X_1, \ldots, X_n) d\theta$$
+
+ovvero il valore atteso della distribuzione a posteriori.
+
+Gli stimatori bayesiani presentano alcune caratteristiche interessanti rispetto agli stimatori classici. Ad esempio, permettono di incorporare conoscenze a priori sul parametro da stimare e di tenere conto della variabilità del parametro stesso. Inoltre, consentono di ottenere stime puntuali e intervalli di credibilità, che rappresentano una generalizzazione degli intervalli di confidenza classici. Tuttavia, la loro applicazione richiede un certo livello di competenza nella specifica della distribuzione a priori e la scelta di una distribuzione a priori inadeguata può portare a stime poco accurate.
+
+
