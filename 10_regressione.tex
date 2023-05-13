@@ -1,0 +1,46 @@
+\chapter{Regressione}
+La regressione è una tecnica statistica utilizzata per studiare la relazione tra una variabile dipendente e una o più variabili indipendenti. La regressione lineare è il tipo più comune di regressione, in cui si cerca di modellare la relazione tra una variabile dipendente continua e una o più variabili indipendenti tramite una funzione lineare.
+
+L'obiettivo della regressione è di trovare il modello di regressione che fornisce la miglior previsione della variabile dipendente data la conoscenza delle variabili indipendenti. Per fare ciò, si cerca di minimizzare la differenza tra i valori osservati della variabile dipendente e i valori previsti dal modello di regressione.
+
+La regressione può essere utilizzata per scopi diversi, ad esempio per analizzare i dati di un esperimento scientifico, per fare previsioni di vendita, per identificare i fattori che influenzano il prezzo delle case, ecc.
+
+In generale, la regressione può essere eseguita in due fasi principali: la fase di addestramento, in cui viene costruito il modello di regressione, e la fase di test, in cui il modello viene utilizzato per fare previsioni su nuovi dati.
+
+La regressione lineare si basa sull'equazione:
+
+$$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + ... + \beta_p x_p + \epsilon$$
+
+dove $y$ è la variabile dipendente, $x_1, x_2, ..., x_p$ sono le variabili indipendenti, $\beta_0, \beta_1, \beta_2, ..., \beta_p$ sono i coefficienti del modello e $\epsilon$ è l'errore casuale.
+
+La stima dei coefficienti può essere effettuata utilizzando il metodo dei minimi quadrati, che cerca di minimizzare la somma dei quadrati degli errori tra i valori osservati e quelli previsti dal modello.
+
+Esistono diversi tipi di regressione, come la regressione logistica per le variabili binarie o la regressione polinomiale per le relazioni non lineari. Inoltre, esistono anche tecniche di regressione non parametriche, come la regressione spline, che non richiedono l'assunzione di una forma funzionale specifica per il modello di regressione.
+
+\section{Stima dei parametri di regressione}
+La stima dei parametri di regressione viene effettuata attraverso il metodo dei minimi quadrati. Supponiamo di avere un modello di regressione lineare semplice:
+
+$$Y_i = \beta_0 + \beta_1 X_i + \epsilon_i, \quad i = 1,\ldots,n,$$
+
+dove $Y_i$ è la variabile dipendente, $X_i$ è la variabile indipendente, $\epsilon_i$ è l'errore casuale, $\beta_0$ e $\beta_1$ sono i parametri da stimare. Il metodo dei minimi quadrati consiste nel trovare i valori di $\beta_0$ e $\beta_1$ che minimizzano la somma dei quadrati degli scarti tra i valori osservati di $Y_i$ e quelli predetti dal modello:
+
+$$\min_{\beta_0,\beta_1} \sum_{i=1}^n (Y_i - \beta_0 - \beta_1 X_i)^2.$$
+
+La soluzione a questo problema può essere trovata attraverso le derivate parziali e l'uguaglianza a zero:
+
+$$\hat{\beta}_1 = \frac{\sum_{i=1}^n (X_i - \bar{X})(Y_i - \bar{Y})}{\sum_{i=1}^n (X_i - \bar{X})^2},$$
+
+$$\hat{\beta}_0 = \bar{Y} - \hat{\beta}_1 \bar{X},$$
+
+dove $\bar{X}$ e $\bar{Y}$ sono le medie campionarie di $X$ e $Y$. La stima della varianza degli errori può essere calcolata come:
+
+$$\hat{\sigma}^2 = \frac{\sum_{i=1}^n (Y_i - \hat{\beta}_0 - \hat{\beta}_1 X_i)^2}{n-2}.$$
+
+Questo valore è utilizzato per calcolare gli errori standard delle stime dei parametri:
+
+$$\text{se}(\hat{\beta}_1) = \sqrt{\frac{\hat{\sigma}^2}{\sum_{i=1}^n (X_i - \bar{X})^2}},$$
+
+$$\text{se}(\hat{\beta}_0) = \hat{\sigma} \sqrt{\frac{1}{n} + \frac{\bar{X}^2}{\sum_{i=1}^n (X_i - \bar{X})^2}}.$$ 
+
+Queste quantità possono essere utilizzate per costruire gli intervalli di confidenza e test di ipotesi sui parametri di regressione.
+
