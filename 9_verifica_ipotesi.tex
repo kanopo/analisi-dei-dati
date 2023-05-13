@@ -159,12 +159,107 @@ Per accettare o rifiutare l'ipotesi nulla, confrontiamo il valore della statisti
 
 
 \section{Verifica di ipotesi sulla varianza di una popolazione normale}
+Per verificare l'ipotesi $H_0$ sulla varianza di una popolazione normale, è possibile utilizzare la distribuzione del test chi-quadro.
+
+L'idea è di confrontare la somiglianza tra la varianza del campione e la varianza nota della popolazione $\sigma_0$ ipotizzata nell'ipotesi nulla.
+
+L'ipotesi nulla afferma che la varianza del campione è uguale alla varianza nota della popolazione $\sigma_0$, mentre l'ipotesi alternativa afferma che la varianza del campione è diversa dalla varianza nota della popolazione $\sigma_0$.
+
+Per calcolare il test chi-quadro, occorre calcolare la statistica del test, che è data dalla formula:
+
+$$
+\chi^2 = \frac{(n-1)s^2}{\sigma_0^2}
+$$
+
+dove $n$ è la dimensione del campione, $s^2$ è la varianza campionaria, e $\sigma_0^2$ è la varianza nota della popolazione.
+
+La statistica del test segue una distribuzione chi-quadro con $n-1$ gradi di libertà. L'intervallo di accettazione dell'ipotesi nulla dipende dal livello di significatività del test e dal numero di gradi di libertà.
+
+In generale, se la statistica del test $\chi^2$ è maggiore del valore critico della distribuzione chi-quadro con $n-1$ gradi di libertà al livello di significatività scelto, l'ipotesi nulla viene rigettata a favore dell'ipotesi alternativa. Altrimenti, l'ipotesi nulla viene accettata.
+
+In sintesi, il test chi-quadro permette di verificare se la varianza del campione è uguale alla varianza nota della popolazione, e di determinare se ci sono prove sufficienti per rigettare l'ipotesi nulla a favore dell'ipotesi alternativa.
+
+Accetto l'ipotesi $H_0$ se:
+\begin{equation}
+  \chi^2_{1-\frac{\alpha}{2}, n-1} \leq (n-1)\frac{S^2}{\sigma_0^2} \leq \chi^2_{\frac{\alpha}{2}, n-1}
+\end{equation}
 
 \subsection{Verifica se hanno la stessa varianza - media e varianza incognite DA FIXARE}
+Per verificare se due popolazioni hanno la stessa varianza, con media incognite ma varianza incognita ma uguale, si può utilizzare un test statistico basato sulla distribuzione di Fisher-Snedecor. 
+
+L'ipotesi nulla (H0) è che le due popolazioni abbiano la stessa varianza, mentre l'ipotesi alternativa (H1) è che le varianze siano diverse.
+
+Il test di verifica si basa sulla costruzione della statistica di test data da:
+
+$F = \frac{s_1^2}{s_2^2}$
+
+dove $s_1^2$ e $s_2^2$ sono le varianze campionarie delle due popolazioni.
+
+La statistica di test F segue una distribuzione di Fisher-Snedecor con $n_1-1$ gradi di libertà al numeratore e $n_2-1$ gradi di libertà al denominatore, dove $n_1$ e $n_2$ sono le dimensioni dei due campioni.
+
+A questo punto si può calcolare il valore p associato alla statistica di test F, e confrontarlo con il livello di significatività $\alpha$ scelto a priori. Se il valore p è maggiore di $\alpha$, non si rifiuta l'ipotesi nulla H0, altrimenti si rifiuta e si accetta l'ipotesi alternativa H1.
+
+Il test può essere a una coda (se l'ipotesi alternativa prevede che una varianza sia maggiore dell'altra) o a due code (se l'ipotesi alternativa prevede che le varianze siano diverse).
+
+In alternativa, è possibile utilizzare un intervallo di confidenza per la differenza delle varianze campionarie, che consente di stabilire se le due varianze sono significativamente diverse a un livello di confidenza specificato.
+
+Accetto l'ipotesi $H_0$ se:
+\begin{equation}
+  F_{1- \frac{\alpha}{2}, n-1, m-1} \leq \frac{S^2_x}{S^2_y} \leq F_{\frac{\alpha}{2}, n-1, m-1}
+\end{equation}
 
 \section{La verifica di ipotesi su ua popolazione di Bernoulli}
 
+Supponiamo di avere una popolazione di Bernoulli con parametro $p$, dove vogliamo verificare l'ipotesi $H_0: p=p_0$ contro l'ipotesi alternativa $H_1: p \neq p_0$, con un livello di significatività $\alpha$.
 
+Sia $X$ la variabile casuale che rappresenta il numero di successi in $n$ prove indipendenti con probabilità di successo $p$. La media campionaria $\hat{p} = X/n$ segue approssimativamente una distribuzione normale con media $p$ e deviazione standard $\sqrt{\frac{p(1-p)}{n}}$.
 
+Definiamo la statistica di test $Z$ come:
 
+$$Z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}$$
 
+Se $H_0$ è vera, allora $Z$ segue una distribuzione normale standard. Possiamo quindi calcolare il valore p come:
+
+$$p = P(|Z| > |z_{\alpha/2}|)$$
+
+dove $z_{\alpha/2}$ è il valore critico corrispondente al livello di significatività $\alpha$. Se $p \leq \alpha$, allora rifiutiamo $H_0$; altrimenti, non abbiamo sufficienti evidenze per rifiutare $H_0$.
+
+\subsection{Verificare se due popolazioni di Bernoulli hanno lo stesso parametro}
+
+Per verificare se due popolazioni di Bernoulli hanno lo stesso parametro, possiamo utilizzare il test di ipotesi per la differenza di proporzioni. Supponiamo di avere due campioni indipendenti, con $n_1$ e $n_2$ osservazioni rispettivamente, e vogliamo testare l'ipotesi nulla $H_0: p_1 = p_2$ contro l'ipotesi alternativa $H_1: p_1 \neq p_2$, dove $p_1$ e $p_2$ sono le proporzioni delle due popolazioni.
+
+Il test si basa sulla statistica del test $Z$ data da:
+
+$$Z = \frac{\hat{p}_1 - \hat{p}_2}{\sqrt{\hat{p}(1 - \hat{p})\left(\frac{1}{n_1}+\frac{1}{n_2}\right)}}$$
+
+dove $\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}$ è la stima della proporzione combinata delle due popolazioni, e $\hat{p}_1$ e $\hat{p}_2$ sono le stime delle proporzioni nei due campioni.
+
+La statistica del test $Z$ segue approssimativamente la distribuzione normale standard se $H_0$ è vera. Quindi, possiamo calcolare il valore $p$ come l'area della coda della distribuzione normale standard a destra del valore assoluto di $Z$:
+
+$$p = 2\Phi(-|Z|)$$
+
+dove $\Phi$ è la funzione di distribuzione cumulativa della distribuzione normale standard. Se $p$ è minore di un livello di significatività scelto $\alpha$, possiamo rigettare l'ipotesi nulla $H_0$ e concludere che ci sono prove sufficienti per affermare che le proporzioni delle due popolazioni sono diverse. Altrimenti, non abbiamo prove sufficienti per rigettare l'ipotesi nulla e dobbiamo accettarla.
+
+È importante notare che il test di ipotesi per la differenza di proporzioni assume che le due popolazioni siano indipendenti e che i successi e i fallimenti siano distribuiti come una distribuzione di Bernoulli. Inoltre, la statistica del test $Z$ può essere utilizzata solo quando il conteggio atteso dei successi e dei fallimenti è maggiore di 5 in entrambi i campioni.
+
+\section{La verifica di ipotesi sulla media di una distribuzione di Poisson}
+
+La verifica di ipotesi sulla media di una distribuzione di Poisson viene effettuata quando vogliamo stabilire se la media $\lambda$ di una popolazione di distribuzione di Poisson segue un certo valore $\lambda_0$ o meno.
+
+Le ipotesi sono:
+- $H_0$: la media della popolazione di distribuzione di Poisson è $\lambda_0$
+- $H_1$: la media della popolazione di distribuzione di Poisson non è $\lambda_0$
+
+La statistica del test è data da:
+
+$$
+Z = \frac{\bar{X} - \lambda_0}{\sqrt{\frac{\lambda_0}{n}}}
+$$
+
+dove $\bar{X}$ è la media campionaria, $n$ è la dimensione del campione e $\lambda_0$ è il valore che vogliamo testare.
+
+Assumendo $H_0$, la statistica del test segue una distribuzione normale standard.
+
+La regione di accettazione e la regione critica dipendono dal livello di significatività $\alpha$ del test e dal tipo di test (a una o due code). In generale, la regione critica si trova in corrispondenza dei valori di $Z$ tali che la probabilità cumulativa della distribuzione normale standard è inferiore a $\alpha$.
+
+Se il valore di $Z$ calcolato dal campione rientra nella regione di accettazione, si accetta $H_0$. Altrimenti, si rifiuta $H_0$ e si accetta $H_1$.
